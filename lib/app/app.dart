@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'theme/app_theme.dart';
+import '../features/dashboard/presentation/dashboard_screen.dart';
 
 class MatchForgeApp extends StatelessWidget {
   const MatchForgeApp({super.key});
@@ -8,11 +10,8 @@ class MatchForgeApp extends StatelessWidget {
     return MaterialApp(
       title: 'Match Forge',
       debugShowCheckedModeBanner: false,
-      home: const Scaffold(
-        body: Center(
-          child: Text('Match Forge'),
-        ),
-      ),
+      theme: AppTheme.light,
+      home: const DashboardScreen(),
     );
   }
 }
