@@ -12,73 +12,123 @@ class NewMatchCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: double.infinity,
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(24),
-        gradient: const LinearGradient(
-          begin: Alignment.topLeft,
-          end: Alignment.bottomRight,
-          colors: [
-            AppColors.primary,
-            AppColors.primaryDark,
-          ],
-        ),
-        boxShadow: const [
-          BoxShadow(
-            color: Color(0x33000000),
-            blurRadius: 18,
-            offset: Offset(0, 8),
-          ),
-        ],
-      ),
+    return Material(
+      color: Colors.transparent,
+      borderRadius: BorderRadius.circular(22),
       child: InkWell(
-        borderRadius: BorderRadius.circular(24),
+        borderRadius: BorderRadius.circular(22),
         onTap: onTap,
-        child: const Padding(
-          padding: EdgeInsets.symmetric(
-            horizontal: 28,
-            vertical: 30,
+        child: Container(
+          width: double.infinity,
+          height: 220,
+          clipBehavior: Clip.antiAlias,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(22),
+            image: const DecorationImage(
+              image: AssetImage(
+                'assets/ui/hero_background.png',
+              ),
+              fit: BoxFit.cover,
+            ),
+            boxShadow: const [
+              BoxShadow(
+                color: Color(0x33000000),
+                blurRadius: 20,
+                offset: Offset(0, 10),
+              ),
+            ],
           ),
-          child: Row(
+          child: Stack(
             children: [
-              CircleAvatar(
-                radius: 38,
-                backgroundColor: Colors.white24,
-                child: Icon(
-                  Icons.sports_soccer_rounded,
-                  size: 42,
-                  color: Colors.white,
+              // Capa oscura para mejorar la lectura del texto.
+              Positioned.fill(
+                child: DecoratedBox(
+                  decoration: BoxDecoration(
+                    gradient: LinearGradient(
+                      begin: Alignment.centerLeft,
+                      end: Alignment.centerRight,
+                      colors: [
+                        Colors.transparent,
+                        Color(0x22000000),
+                        Color(0x77000000),
+                      ],
+                      stops: [
+                        0.25,
+                        0.55,
+                        1,
+                      ],
+                    ),
+                  ),
                 ),
               ),
-              SizedBox(width: 24),
-              Expanded(
+
+              // Textos.
+              Positioned(
+                left: 390,
+                top: 38,
+                right: 130,
+                bottom: 30,
                 child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
-                      'NUEVO PARTIDO',
+                    const Text(
+                      'ACCIÓN RÁPIDA',
                       style: TextStyle(
-                        fontSize: 30,
+                        color: AppColors.secondary,
+                        fontSize: 14,
                         fontWeight: FontWeight.w900,
-                        color: Colors.white,
+                        letterSpacing: 1,
                       ),
                     ),
-                    SizedBox(height: 8),
+                    const SizedBox(height: 8),
+                    const Text(
+                      'NUEVO PARTIDO',
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 40,
+                        fontWeight: FontWeight.w900,
+                        fontStyle: FontStyle.italic,
+                        letterSpacing: 0.3,
+                      ),
+                    ),
+                    const SizedBox(height: 10),
                     Text(
                       'Crea un nuevo partido en segundos',
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
                       style: TextStyle(
-                        fontSize: 16,
-                        color: AppColors.primarySoft,
+                        color: Colors.white.withValues(alpha: 0.88),
+                        fontSize: 18,
                       ),
                     ),
                   ],
                 ),
               ),
-              Icon(
-                Icons.arrow_forward_rounded,
-                size: 38,
-                color: AppColors.secondary,
+
+              // Flecha.
+              Positioned(
+                right: 34,
+                top: 74,
+                child: Container(
+                  width: 72,
+                  height: 72,
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: Colors.black.withValues(alpha: 0.18),
+                    border: Border.all(
+                      color: Colors.white.withValues(alpha: 0.65),
+                      width: 2,
+                    ),
+                  ),
+                  child: const Icon(
+                    Icons.arrow_forward_rounded,
+                    size: 40,
+                    color: Colors.white,
+                  ),
+                ),
               ),
             ],
           ),

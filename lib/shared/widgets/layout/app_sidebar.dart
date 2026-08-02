@@ -8,7 +8,7 @@ class AppSidebar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 240,
+      width: 220,
       color: AppColors.textPrimary,
       padding: const EdgeInsets.symmetric(
         horizontal: 18,
@@ -19,8 +19,9 @@ class AppSidebar extends StatelessWidget {
         children: [
           Center(
             child: Image.asset(
-              'assets/images/mamkode_logo.png',
-              height: 74,
+              'assets/images/mamkode_logo.jpg',
+              height: 72,
+              fit: BoxFit.contain,
             ),
           ),
           const SizedBox(height: 14),
@@ -29,23 +30,20 @@ class AppSidebar extends StatelessWidget {
               'MATCH FORGE',
               style: TextStyle(
                 color: Colors.white,
-                fontSize: 22,
+                fontSize: 20,
                 fontWeight: FontWeight.w900,
+                letterSpacing: 0.8,
               ),
             ),
           ),
-          const SizedBox(height: 4),
-          const Center(
-            child: Text(
-              'by MAMKODE',
-              style: TextStyle(
-                color: AppColors.primary,
-                fontSize: 13,
-                fontWeight: FontWeight.w600,
-              ),
-            ),
+
+          const SizedBox(height: 20),
+          Container(
+            height: 1,
+            color: Colors.white12,
           ),
-          const SizedBox(height: 32),
+          const SizedBox(height: 20),
+
           _SidebarItem(
             icon: Icons.dashboard_rounded,
             label: 'Dashboard',

@@ -31,7 +31,6 @@ class AppHeader extends StatelessWidget {
             ),
           ),
           const Spacer(),
-          Image.asset('assets/images/mamkode_logo.jpg', height: 42),
         ],
       ),
     );
