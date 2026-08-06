@@ -20,7 +20,14 @@ class AppHeader extends StatelessWidget {
       child: Row(
         children: [
           if (showMenuButton)
-            IconButton(onPressed: () {}, icon: const Icon(Icons.menu_rounded)),
+            Builder(
+              builder: (context) => IconButton(
+                icon: const Icon(Icons.menu_rounded),
+                onPressed: () {
+                  Scaffold.of(context).openDrawer();
+                },
+              ),
+            ),
           const SizedBox(width: 12),
           Text(
             title,

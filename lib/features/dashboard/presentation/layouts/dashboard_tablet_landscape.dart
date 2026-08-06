@@ -6,8 +6,8 @@ import '../../../../shared/widgets/cards/new_match_card.dart';
 import '../../../../shared/widgets/layout/app_header.dart';
 import '../../../../shared/widgets/layout/app_sidebar.dart';
 
-class DashboardScreen extends StatelessWidget {
-  const DashboardScreen({super.key});
+class DashboardTabletLandscape extends StatelessWidget {
+  const DashboardTabletLandscape({super.key});
 
   @override
   Widget build(BuildContext context) {

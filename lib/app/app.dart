@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'theme/app_theme.dart';
-import '../features/dashboard/presentation/dashboard_screen.dart';
+import '../features/dashboard/presentation/screens/dashboard_screen.dart';
 
 class MatchForgeApp extends StatelessWidget {
   const MatchForgeApp({super.key});
