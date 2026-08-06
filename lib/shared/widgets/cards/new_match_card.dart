@@ -18,7 +18,7 @@ class NewMatchCard extends StatelessWidget {
         final isMobile = width < 600;
         final isCompactTablet = width >= 600 && width < 900;
 
-        final cardHeight = isMobile ? 210.0 : 220.0;
+        final cardHeight = isMobile ? 190.0 : 220.0;
         final textLeft = isMobile
             ? width * 0.39
             : isCompactTablet
